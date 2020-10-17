@@ -1,0 +1,2 @@
+# Among-Us-Simple-Imposter-Finder
+This is just a simple web based program that documents and calculates the chance that someone is the imposter. This is a fairly simple application just made with HTML, CSS and JS. I do plan on making improvements to these files like adding in machine learning to increase/decrease the imposter chance based off how fast you accuse someone else etc. As I said before, this is an early version and is really simple with probably a lot of bugs. I do plan on fixing it up over time. 
