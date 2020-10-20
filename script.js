@@ -100,6 +100,7 @@ var changeColor1 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //the code for the second squares
 var changeColor2 = () => {
@@ -151,6 +152,7 @@ var changeColor2 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the third
 var changeColor3 = () => {
@@ -202,6 +204,7 @@ var changeColor3 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the fourth
 var changeColor4 = () => {
@@ -253,6 +256,7 @@ var changeColor4 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the fifth
 var changeColor5 = () => {
@@ -304,6 +308,7 @@ var changeColor5 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the sixth
 var changeColor6 = () => {
@@ -355,6 +360,7 @@ var changeColor6 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the seventh
 var changeColor7 = () => {
@@ -406,6 +412,7 @@ var changeColor7 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the eighth
 var changeColor8 = () => {
@@ -457,6 +464,7 @@ var changeColor8 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 //code for the ninth
 var changeColor9 = () => {
@@ -508,6 +516,7 @@ var changeColor9 = () => {
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
+  update();
 }
 
 //the basic percentage mechanics
@@ -685,45 +694,54 @@ var imposter9 = () => {
 var dead1 = () => {
   document.getElementById("chance1").innerHTML = "0%";
   players[0] = false;
+  updateTotal();
   update();
 }
 var dead2 = () => {
   document.getElementById("chance2").innerHTML = "0%";
   players[1] = false;
+  updateTotal();
   update();
 }
 var dead3 = () => {
   document.getElementById("chance3").innerHTML = "0%";
   players[2] = false;
+  updateTotal();
   update();
 }
 var dead4 = () => {
   document.getElementById("chance4").innerHTML = "0%";
   players[3] = false;
+  updateTotal();
   update();
 }
 var dead5 = () => {
   document.getElementById("chance5").innerHTML = "0%";
   players[4] = false;
+  updateTotal();
   update();
 }
 var dead6 = () => {
   document.getElementById("chance6").innerHTML = "0%";
   players[5] = false;
+  updateTotal();
   update();
 }
 var dead7 = () => {
   document.getElementById("chance7").innerHTML = "0%";
   players[6] = false;
+  updateTotal();
   update();
 }
 var dead8 = () => {
   document.getElementById("chance8").innerHTML = "0%";
   players[7] = false;
+  updateTotal();
   update();
 }
 var dead9 = () => {
   document.getElementById("chance9").innerHTML = "0%";
   players[8] = false;
+  updateTotal();
   update();
 }
