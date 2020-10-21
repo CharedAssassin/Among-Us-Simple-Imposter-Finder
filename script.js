@@ -521,7 +521,8 @@ var changeColor9 = () => {
 
 //the basic percentage mechanics
 var total = 9
-var fake = window.prompt("How many imposters are there?");
+var fake1 = window.prompt("How many imposters are there?");
+var fake = fake1;
 var players = [
   true,
   true,
@@ -743,5 +744,14 @@ var dead9 = () => {
   document.getElementById("chance9").innerHTML = "0%";
   players[8] = false;
   updateTotal();
+  update();
+}
+
+var reset = () => {
+  for (i=0; i<players.length;i++) {
+    players[i] = true;
+  }
+  total = 9;
+  fake = fake1;
   update();
 }
