@@ -1,11 +1,45 @@
-//the first update to get percentages
-var loop = 0;
-while (loop = 0) {
-  if (fake > 0) {
-    update();
-    loop = 1;
-  }
-}
+//defining arrays used to control all 9 squares in a neat fashion
+var players = [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+]
+var chances = [
+  "chance1",
+  "chance2",
+  "chance3",
+  "chance4",
+  "chance5",
+  "chance6",
+  "chance7",
+  "chance8",
+  "chance9",
+]
+var colors = [
+  "color1",
+  "color2",
+  "color3",
+  "color4",
+  "color5",
+  "color6",
+  "color7",
+  "color8",
+  "color9",
+]
+
+//defining basic variables that are used to find the percentage each player has of being the imposter
+//total is the amount of players still alive
+var total = 9
+//fake1 is just a holder for fake so then when the reset() function is called we know how many imposters there originally was
+var fake1 = window.prompt("How many imposters are there?");
+//fake is copied off fake1 to say how many imposters there are currently
+var fake = fake1;
 
 //the code for all the individual drop down boxes, they had to be seperate so each box can be controlled seperately
 var options1 = () => {
@@ -50,706 +84,85 @@ window.onclick = function(event) {
 }
 //end drop down box code
 
-//the code for changing the colour of the first square, this needs to be repeated 8 more times for the specific squares
-var changeColor1 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
+//the code for changing the colour of the squares to associate with the colours used in Among Us
+var changeColor = (y) => {
+  //code to find what colour it is meant to switch to
+  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime");
+  //sets the colour to upper case so it is definitely what the code has been told to look for
   let x = i.toUpperCase();
-  let element1 = document.getElementById("color1");
+  //getting the id of the element
+  let element = document.getElementById(colors[y]);
+  //the if code to find out what colour was actually inputted
   if (x==="RED") {
-    element1.className = "red";
+    //setting the box to that colour, these classes are in style.css at the bottom if you want to look at what they actually are
+    element.className = "red";
     return 0;
   } else if (x==="BLUE") {
-    element1.className = "blue";
+    element.className = "blue";
     return 0;
   } else if (x==="GREEN") {
-    element1.className = "green";
+    element.className = "green";
     return 0;
   } else if (x==="PINK") {
-    element1.className = "pink";
+    element.className = "pink";
     return 0;
   } else if (x==="ORANGE") {
-    element1.className = "orange";
+    element.className = "orange";
     return 0;
   } else if (x==="YELLOW") {
-    element1.className = "yellow";
+    element.className = "yellow";
     return 0;
   } else if (x==="BLACK") {
-    element1.className = "black";
+    element.className = "black";
     return 0;
   } else if (x==="WHITE") {
-    element1.className = "white";
+    element.className = "white";
     return 0;
   } else if (x==="PURPLE") {
-    element1.className = "purple";
+    element.className = "purple";
     return 0;
   } else if (x==="BROWN") {
-    element1.className = "brown";
+    element.className = "brown";
     return 0
   } else if (x==="CYAN") {
-    element1.className = "cyan";
+    element.className = "cyan";
     return 0
   } else if (x==="LIME") {
-    element1.className = "lime";
+    element.className = "lime";
     return 0
   } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
+    element.className = "green";
     return 0
   } else {
     window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
   }
   update();
 }
-//the code for the second squares
-var changeColor2 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color2");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the third
-var changeColor3 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color3");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the fourth
-var changeColor4 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color4");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the fifth
-var changeColor5 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color5");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the sixth
-var changeColor6 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color6");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the seventh
-var changeColor7 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color7");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the eighth
-var changeColor8 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color8");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else if (x==="TAN") {
-    element1.className = "tan";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-//code for the ninth
-var changeColor9 = () => {
-  let i = window.prompt("What colour would you like to switch this section to? OPTIONS: red, blue, green, pink, orange, yellow, black, white, purple, brown, cyan, lime, green, tan");
-  let x = i.toUpperCase();
-  let element1 = document.getElementById("color9");
-  if (x==="RED") {
-    element1.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element1.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element1.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element1.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element1.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element1.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element1.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element1.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element1.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element1.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element1.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element1.className = "green";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
-  }
-  update();
-}
-
-//the basic percentage mechanics
-var total = 9
-var fake1 = window.prompt("How many imposters are there?");
-var fake = fake1;
-//to change how many imposters there square
-var changeFake = () => {
-  fake1 = window.prompt("How many imposters are there?");
-  fake = fake1;
-  update()
-}
-var players = [
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-]
-var chances = [
-  "chance1",
-  "chance2",
-  "chance3",
-  "chance4",
-  "chance5",
-  "chance6",
-  "chance7",
-  "chance8",
-  "chance9",
-]
-
-//updating the colours
-var update = () => {
-  for (i = 0; i < players.length; i++) {
-    if (players[i] === true) {
-      document.getElementById(chances[i]).innerHTML = percentage() + "%";
-    } else if (players[i] === "imposter") {
-      fake = fake - 1;
-      players[i] = "imposterK";
-      update();
-      document.getElementById(chances[i]).innerHTML = "100%";
-    } else if (players[i] === "imposterK") {
-      players[i] = "imposterK";
-      document.getElementById(chances[i]).innerHTML = "100%";
-    } else {
-      document.getElementById(chances[i]).innerHTML = "0%";
-    }
-  }
-}
-
-
-//figuring out the percentage
-var percentage = () => {
-  let i = fake/total*100;
-  return Math.floor(i);
-}
-
-
-//updating the total variable
-var updateTotal = () => {
-  total = total - 1;
-}
-
 
 //dealing with ruling out players, through tasks
-var taskDone1 = () => {
-  document.getElementById("chance1").innerHTML = "0%";
-  players[0] = false;
+var taskDone = (i) => {
+  //a lot of these use an array which takes i, which is an argument saying where in the array, to work out what player
+  //if it didn't have that array, the code would have 9 functions that look almost identical to this
+  players[i] = false;
   updateTotal();
   update();
-  console.log(percentage());
-}
-var taskDone2 = () => {
-  document.getElementById("chance2").innerHTML = "0%";
-  players[1] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone3 = () => {
-  document.getElementById("chance3").innerHTML = "0%";
-  players[2] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone4 = () => {
-  document.getElementById("chance4").innerHTML = "0%";
-  players[3] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone5 = () => {
-  document.getElementById("chance5").innerHTML = "0%";
-  players[4] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone6 = () => {
-  document.getElementById("chance6").innerHTML = "0%";
-  players[5] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone7 = () => {
-  document.getElementById("chance7").innerHTML = "0%";
-  players[6] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone8 = () => {
-  document.getElementById("chance8").innerHTML = "0%";
-  players[7] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
-}
-var taskDone9 = () => {
-  document.getElementById("chance9").innerHTML = "0%";
-  players[8] = false;
-  updateTotal();
-  update();
-  console.log(percentage());
 }
 
 //dealing with ruling out players, if they were imposter
-var imposter1 = () => {
-  document.getElementById("chance1").innerHTML = "100%";
-  players[0] = "imposter";
-  update();
-}
-var imposter2 = () => {
-  document.getElementById("chance2").innerHTML = "100%";
-  players[1] = "imposter";
-  update();
-}
-var imposter3 = () => {
-  document.getElementById("chance3").innerHTML = "100%";
-  players[2] = "imposter";
-  update();
-}
-var imposter4 = () => {
-  document.getElementById("chance4").innerHTML = "100%";
-  players[3] = "imposter";
-  update();
-}
-var imposter5 = () => {
-  document.getElementById("chance5").innerHTML = "100%";
-  players[4] = "imposter";
-  update();
-}
-var imposter6 = () => {
-  document.getElementById("chance6").innerHTML = "100%";
-  players[5] = "imposter";
-  update();
-}
-var imposter7 = () => {
-  document.getElementById("chance7").innerHTML = "100%";
-  players[6] = "imposter";
-  update();
-}
-var imposter8 = () => {
-  document.getElementById("chance8").innerHTML = "100%";
-  players[7] = "imposter";
-  update();
-}
-var imposter9 = () => {
-  document.getElementById("chance9").innerHTML = "100%";
-  players[8] = "imposter";
+var imposter = (i) => {
+  players[i] = "imposter";
+  updateTotal();
   update();
 }
 
 //if someone is dead/left the game
-var dead1 = () => {
-  document.getElementById("chance1").innerHTML = "0%";
-  players[0] = false;
-  updateTotal();
-  update();
-}
-var dead2 = () => {
-  document.getElementById("chance2").innerHTML = "0%";
-  players[1] = false;
-  updateTotal();
-  update();
-}
-var dead3 = () => {
-  document.getElementById("chance3").innerHTML = "0%";
-  players[2] = false;
-  updateTotal();
-  update();
-}
-var dead4 = () => {
-  document.getElementById("chance4").innerHTML = "0%";
-  players[3] = false;
-  updateTotal();
-  update();
-}
-var dead5 = () => {
-  document.getElementById("chance5").innerHTML = "0%";
-  players[4] = false;
-  updateTotal();
-  update();
-}
-var dead6 = () => {
-  document.getElementById("chance6").innerHTML = "0%";
-  players[5] = false;
-  updateTotal();
-  update();
-}
-var dead7 = () => {
-  document.getElementById("chance7").innerHTML = "0%";
-  players[6] = false;
-  updateTotal();
-  update();
-}
-var dead8 = () => {
-  document.getElementById("chance8").innerHTML = "0%";
-  players[7] = false;
-  updateTotal();
-  update();
-}
-var dead9 = () => {
-  document.getElementById("chance9").innerHTML = "0%";
-  players[8] = false;
+var dead = (i) => {
+  players[i] = false;
   updateTotal();
   update();
 }
 
+//resetting the percentages so you don't have to reload the page and redo all the colours
 var reset = () => {
   for (i=0; i<players.length;i++) {
     players[i] = true;
@@ -758,3 +171,46 @@ var reset = () => {
   fake = fake1;
   update();
 }
+
+//updating the total variable so a dead player will not be counted as imposter unless voted out
+var updateTotal = () => {
+  total = total - 1;
+}
+
+//the function used to figure out the percentage each living player has of being the imposter
+var percentage = () => {
+  let i = fake/total*100;
+  return Math.floor(i);
+}
+
+//the code to change how many imposters there are
+var changeFake = () => {
+  fake1 = window.prompt("How many imposters are there?");
+  fake = fake1;
+  update()
+}
+
+//updating the colours
+//this function scans through the array of player status, there is true, for alive and not knowing whether innocent or imposterK
+//false, for either dead or innocent
+//imposter, for confirmed imposter
+//imposterK is so that someone declared imposter will not be marked as imposter twice. Without this, it will decrease everyone elses imposter chance because it thinks you caught both not just one
+var update = () => {
+  for (i = 0; i < players.length; i++) {
+    if (players[i] === true) {
+      document.getElementById(chances[i]).innerHTML = percentage() + "%";
+    } else if (players[i] === false) {
+      document.getElementById(chances[i]).innerHTML = "0%";
+    } else if (players[i] === "imposter") {
+      fake = fake - 1;
+      players[i] = "imposterK";
+      update();
+    } else if (players[i] === "imposterK") {
+      players[i] = "imposterK";
+      document.getElementById(chances[i]).innerHTML = "100%";
+    } else {
+      document.getElementById(chances[i]).innerHTML = "0%";
+    }
+  }
+}
+//it loops through those items until it finds what each player is and updates them accordingly
