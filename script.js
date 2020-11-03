@@ -523,6 +523,12 @@ var changeColor9 = () => {
 var total = 9
 var fake1 = window.prompt("How many imposters are there?");
 var fake = fake1;
+//to change how many imposters there square
+var changeFake = () => {
+  fake1 = window.prompt("How many imposters are there?");
+  fake = fake1;
+  update()
+}
 var players = [
   true,
   true,
