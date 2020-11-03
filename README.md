@@ -1,5 +1,5 @@
 # Among-Us-Simple-Imposter-Finder
-This is just a simple web based program that documents and calculates the chance that someone is the imposter. This is a fairly simple application just made with HTML, CSS and JS. I do plan on making improvements to these files like adding in machine learning to increase/decrease the imposter chance based off how fast you accuse someone else etc. As I said before, this is an early version and is really simple with probably a lot of bugs. I do plan on fixing it up over time. The basic features of this imposter finder are the 9 boxes aranged in a grid. 
+This is just a simple web based program that documents and calculates the chance that someone is the imposter. This is a fairly simple application just made with HTML, CSS and JS. As I said before, this is an early version and is really simple with probably a lot of bugs. I do plan on fixing it up over time. The basic features of this imposter finder are the 9 boxes aranged in a grid. 
 
 When launching the imposter finder, it will ask you how many imposters are in the gamemode, answer accurately as that affects percentages
 If you click on the options part of each square on the left, you will be able to change the colour associated with the square, each one is black by default
