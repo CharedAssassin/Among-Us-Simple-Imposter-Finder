@@ -32,6 +32,17 @@ var colors = [
   "color8",
   "color9",
 ]
+var drpDownId = [
+  "drpContent1",
+  "drpContent2",
+  "drpContent3",
+  "drpContent4",
+  "drpContent5",
+  "drpContent6",
+  "drpContent7",
+  "drpContent8",
+  "drpContent9",
+]
 
 //defining basic variables that are used to find the percentage each player has of being the imposter
 //total is the amount of players still alive
@@ -42,33 +53,10 @@ var fake1 = window.prompt("How many imposters are there?");
 var fake = fake1;
 
 //the code for all the individual drop down boxes, they had to be seperate so each box can be controlled seperately
-var options1 = () => {
-  document.getElementById("drpContent1").classList.toggle("show");
+var options = (i) => {
+  document.getElementById(drpDownId[i]).classList.toggle("show");
 }
-var options2 = () => {
-  document.getElementById("drpContent2").classList.toggle("show");
-}
-var options3 = () => {
-  document.getElementById("drpContent3").classList.toggle("show");
-}
-var options4 = () => {
-  document.getElementById("drpContent4").classList.toggle("show");
-}
-var options5 = () => {
-  document.getElementById("drpContent5").classList.toggle("show");
-}
-var options6 = () => {
-  document.getElementById("drpContent6").classList.toggle("show");
-}
-var options7 = () => {
-  document.getElementById("drpContent7").classList.toggle("show");
-}
-var options8 = () => {
-  document.getElementById("drpContent8").classList.toggle("show");
-}
-var options9 = () => {
-  document.getElementById("drpContent9").classList.toggle("show");
-}
+
 //code for closing drop down boxes
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -93,48 +81,47 @@ var changeColor = (y) => {
   //getting the id of the element
   let element = document.getElementById(colors[y]);
   //the if code to find out what colour was actually inputted
-  if (x==="RED") {
-    //setting the box to that colour, these classes are in style.css at the bottom if you want to look at what they actually are
-    element.className = "red";
-    return 0;
-  } else if (x==="BLUE") {
-    element.className = "blue";
-    return 0;
-  } else if (x==="GREEN") {
-    element.className = "green";
-    return 0;
-  } else if (x==="PINK") {
-    element.className = "pink";
-    return 0;
-  } else if (x==="ORANGE") {
-    element.className = "orange";
-    return 0;
-  } else if (x==="YELLOW") {
-    element.className = "yellow";
-    return 0;
-  } else if (x==="BLACK") {
-    element.className = "black";
-    return 0;
-  } else if (x==="WHITE") {
-    element.className = "white";
-    return 0;
-  } else if (x==="PURPLE") {
-    element.className = "purple";
-    return 0;
-  } else if (x==="BROWN") {
-    element.className = "brown";
-    return 0
-  } else if (x==="CYAN") {
-    element.className = "cyan";
-    return 0
-  } else if (x==="LIME") {
-    element.className = "lime";
-    return 0
-  } else if (x==="GREEN") {
-    element.className = "green";
-    return 0
-  } else {
-    window.alert("That is not a valid option. Please make sure what you typed was a valid option and/or spelt correctly.");
+  switch (x) {
+    case "RED":
+      element.className = "red";
+      console.log("red");
+      break;
+    case "BLUE":
+      element.className = "blue";
+      console.log("blue");
+      break;
+    case "GREEN":
+      element.className = "green";
+      break;
+    case "PINK":
+      element.className = "pink";
+      break;
+    case "ORANGE":
+      element.className = "orange"
+      break;
+    case "YELLOW":
+      element.className = "yellow";
+      break;
+    case "BLACK":
+      element.className = "black";
+      break;
+    case "WHITE":
+      element.className = "white";
+      break;
+    case "PURPLE":
+      element.className = "purple";
+      break;
+    case "BROWN":
+      element.className = "brown";
+      break;
+    case "CYAN":
+      element.className = "cyan";
+      break;
+    case "LIME":
+      element.className = "lime";
+      break;
+    default:
+      window.alert("This was now a valid option. Please make sure it was spelt correctly")
   }
   update();
 }
