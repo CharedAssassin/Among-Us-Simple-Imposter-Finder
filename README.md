@@ -9,3 +9,6 @@ Inputting inaccurate information can screw over the script
 As I said before, this script was written quickly and there are probably still a lot of bugs in it. In the future, I will try to get rid of all the bugs and even have it record gameplay so you don't have to manually put it in though that is not in there yet. Feel free to make any modifications you want to this code although if you do plan on reupploading your modifications to github or another website please just put my name on it too and a link to my original repository. 
 
 ENJOY THE IMPOSTER FINDER
+
+
+THE ONLY DIFFERENCE BETWEEN THE MOBILE AND NORMAL VERSION IS THAT THE WEB VERSION HAS FEATURES THAT REQUIRE A MOUSE AND IS A BIT SIMPLER SO IT RUNS BETTER ON MOBILE
