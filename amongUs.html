@@ -11,9 +11,18 @@
 		<!--onload function is there so the percentages automatically load, it can be manually loaded by clicking the title-->
 		<body onLoad="update()">
 			<center>
-				<h1 onClick="update()">
-					Among Us Imposter Finder
-				</h1>
+				<span>
+					<h1>
+						Among Us Imposter Finder
+					</h1>
+					<span class="dropdown" onMouseOver="titleOptions()" onMouseLeave="closeBox()">
+						<input type="button" value=":" id="options" onClick="titleOptions()" class="dropbtn"></input>
+						<span id="drpDownTitle" class="dropdown-content" onMouseOver="titleOptions()" onMouseLeave="closeBox()">
+							<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
+							<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
+						</span>
+					</span>
+			</span>
 				<!--I used a table to orientate the colours into a 3x3 grid-->
 				<table>
 					<tr>
@@ -24,16 +33,14 @@
 								<span id="chance1">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(0)" onMouseLeave="closeBox()">
 									<!--in the drop down box it has all the functions you can do which are self explanitory based off the names in the onClick part of it-->
 									<input type="button" value=":" id="options" onClick="options(0)" class="dropbtn"></input>
-									<span id="drpContent1" class="dropdown-content">
+									<span id="drpContent1" class="dropdown-content" onMouseOver="options(0)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(0)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(0)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(0)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(0)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -44,15 +51,13 @@
 								<span id="chance2">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(1)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(1)" class="dropbtn"></input>
-									<span id="drpContent2" class="dropdown-content">
+									<span id="drpContent2" class="dropdown-content" onMouseOver="options(1)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(1)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(1)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(1)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(1)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -62,15 +67,13 @@
 								<span id="chance3">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(2)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(2)" class="dropbtn"></input>
-									<span id="drpContent3" class="dropdown-content">
+									<span id="drpContent3" class="dropdown-content" onMouseOver="options(2)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(2)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(2)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(2)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(2)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -82,15 +85,13 @@
 								<span id="chance4">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(3)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(3)" class="dropbtn"></input>
-									<span id="drpContent4" class="dropdown-content">
+									<span id="drpContent4" class="dropdown-content" onMouseOver="options(3)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(3)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(3)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(3)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(3)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -100,15 +101,13 @@
 								<span id="chance5">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(4)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(4)" class="dropbtn"></input>
-									<span id="drpContent5" class="dropdown-content">
+									<span id="drpContent5" class="dropdown-content" onMouseOver="options(4)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(4)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(4)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(4)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(4)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -118,15 +117,13 @@
 								<span id="chance6">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(5)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(5)" class="dropbtn"></input>
-									<span id="drpContent6" class="dropdown-content">
+									<span id="drpContent6" class="dropdown-content" onMouseOver="options(5)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(5)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(5)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(5)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(5)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -138,15 +135,13 @@
 								<span id="chance7">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(6)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(6)" class="dropbtn"></input>
-									<span id="drpContent7" class="dropdown-content">
+									<span id="drpContent7" class="dropdown-content" onMouseOver="options(6)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(6)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(6)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(6)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(6)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -156,15 +151,13 @@
 								<span id="chance8">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(7)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(7)" class="dropbtn"></input>
-									<span id="drpContent8" class="dropdown-content">
+									<span id="drpContent8" class="dropdown-content" onMouseOver="options(7)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(7)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(7)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(7)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(7)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
@@ -174,15 +167,13 @@
 								<span id="chance9">
 									%
 								</span>
-								<span class="dropdown">
+								<span class="dropdown" onMouseOver="options(8)" onMouseLeave="closeBox()">
 									<input type="button" value=":" id="options" onClick="options(8)" class="dropbtn"></input>
-									<span id="drpContent9" class="dropdown-content">
+									<span id="drpContent9" class="dropdown-content" onMouseOver="options(8)" onMouseLeave="closeBox()">
 										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(8)"></input>
 										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(8)"></input>
 										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(8)"></input>
 										<input type="button" id="drpItem" value="Dead/left" onClick="dead(8)"></input>
-										<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-										<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
 									</span>
 								</span>
 							</center>
