@@ -53,8 +53,23 @@ var fake1 = window.prompt("How many imposters are there?");
 var fake = fake1;
 
 //the code for all the individual drop down boxes, they had to be seperate so each box can be controlled seperately
+
+var titleOptions = () => {
+  document.getElementById("drpDownTitle").classList.toggle("show");
+}
+
 var options = (i) => {
   document.getElementById(drpDownId[i]).classList.toggle("show");
+}
+var closeBox = () => {
+  var dropdowns = document.getElementsByClassName("dropdown-content");
+  var i;
+  for (i = 0; i < dropdowns.length; i++) {
+    var openDropdown = dropdowns[i];
+    if (openDropdown.classList.contains('show')) {
+      openDropdown.classList.remove('show');
+    }
+  }
 }
 
 //code for closing drop down boxes
