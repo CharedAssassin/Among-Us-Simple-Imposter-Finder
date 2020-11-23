@@ -43,6 +43,122 @@ var drpDownId = [
   "drpContent8",
   "drpContent9",
 ]
+var idAndFunctions = {
+  options: [
+    "options(0)",
+    "options(1)",
+    "options(2)",
+    "options(3)",
+    "options(4)",
+    "options(5)",
+    "options(6)",
+    "options(7)",
+    "options(8)",
+  ],
+  color: [
+    "changeColor(0)",
+    "changeColor(1)",
+    "changeColor(2)",
+    "changeColor(3)",
+    "changeColor(4)",
+    "changeColor(5)",
+    "changeColor(6)",
+    "changeColor(7)",
+    "changeColor(8)",
+  ],
+  task: [
+    "taskDone(0)",
+    "taskDone(1)",
+    "taskDone(2)",
+    "taskDone(3)",
+    "taskDone(4)",
+    "taskDone(5)",
+    "taskDone(6)",
+    "taskDone(7)",
+    "taskDone(8)",
+  ],
+  imp: [
+    "imposter(0)",
+    "imposter(1)",
+    "imposter(2)",
+    "imposter(3)",
+    "imposter(4)",
+    "imposter(5)",
+    "imposter(6)",
+    "imposter(7)",
+    "imposter(8)",
+  ],
+  dead: [
+    "dead(0)",
+    "dead(1)",
+    "dead(2)",
+    "dead(3)",
+    "dead(4)",
+    "dead(5)",
+    "dead(6)",
+    "dead(7)",
+    "dead(8)",
+  ],
+}
+
+//a function that creates all the elements in the tables
+var createElements = () => {
+  for (i = 0; i < colors.length; i++) {
+    let element = document.getElementById(colors[i]);
+    let center = document.createElement("center");
+    let percentage = document.createElement("span");
+    percentage.setAttribute("id", chances[i]);
+    percentage.innerHTML = "%";
+    let dropDown = document.createElement("span");
+    dropDown.setAttribute("class", "dropdown");
+    dropDown.setAttribute("onMouseOver", idAndFunctions.options[i])
+    dropDown.setAttribute("onMouseLeave", "closeBox()");
+    let drpDownContent = document.createElement("span");
+    drpDownContent.setAttribute("id", drpDownId[i]);
+    drpDownContent.setAttribute("class", "dropdown-content");
+    drpDownContent.setAttribute("onMouseOver", idAndFunctions.options[i]);
+    drpDownContent.setAttribute("onMouseLeave", "closeBox()");
+    let button = document.createElement("input");
+    button.setAttribute("type", "button");
+    button.setAttribute("value", ":");
+    button.setAttribute("onClick", idAndFunctions.options[i])
+    button.setAttribute("id", "options");
+    button.setAttribute("class", "dropbtn")
+    //the C at the end of the name is just to seperate it from other functions
+    let changeColorC = document.createElement("input");
+    changeColorC.setAttribute("type", "button");
+    changeColorC.setAttribute("id", "drpItem");
+    changeColorC.setAttribute("value", "Change Colour");
+    changeColorC.setAttribute("onClick", idAndFunctions.color[i]);
+    let doingTaskC = document.createElement("input");
+    doingTaskC.setAttribute("type", "button");
+    doingTaskC.setAttribute("id", "drpItem");
+    doingTaskC.setAttribute("value", "Doing Task");
+    doingTaskC.setAttribute("onClick", idAndFunctions.task[i]);
+    let confirmedImpC = document.createElement("input");
+    confirmedImpC.setAttribute("type", "button");
+    confirmedImpC.setAttribute("id", "drpItem");
+    confirmedImpC.setAttribute("value", "Confirmed Imposter");
+    confirmedImpC.setAttribute("onClick", idAndFunctions.imp[i]);
+    let deadOrLeftC = document.createElement("input");
+    deadOrLeftC.setAttribute("type", "button");
+    deadOrLeftC.setAttribute("id", "drpItem");
+    deadOrLeftC.setAttribute("value", "Dead/left");
+    deadOrLeftC.setAttribute("onClick", idAndFunctions.dead[i]);
+
+    //adding all the elements together so then we have the functioning page
+    element.appendChild(center);
+    center.appendChild(percentage);
+    center.appendChild(dropDown);
+    dropDown.appendChild(button);
+    dropDown.appendChild(drpDownContent);
+    drpDownContent.appendChild(changeColorC);
+    drpDownContent.appendChild(doingTaskC);
+    drpDownContent.appendChild(confirmedImpC);
+    drpDownContent.appendChild(deadOrLeftC);
+  }
+  update();
+}
 
 //defining basic variables that are used to find the percentage each player has of being the imposter
 //total is the amount of players still alive
