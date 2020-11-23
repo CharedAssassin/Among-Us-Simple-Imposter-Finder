@@ -61,16 +61,6 @@ var titleOptions = () => {
 var options = (i) => {
   document.getElementById(drpDownId[i]).classList.toggle("show");
 }
-var closeBox = () => {
-  var dropdowns = document.getElementsByClassName("dropdown-content");
-  var i;
-  for (i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.classList.contains('show')) {
-      openDropdown.classList.remove('show');
-    }
-  }
-}
 
 //code for closing drop down boxes
 window.onclick = function(event) {
