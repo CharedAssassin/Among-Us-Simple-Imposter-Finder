@@ -9,7 +9,7 @@
 			</title>
 		</head>
 		<!--onload function is there so the percentages automatically load, it can be manually loaded by clicking the title-->
-		<body onLoad="update()">
+		<body onLoad="createElements()">
 			<center>
 				<span>
 					<h1>
@@ -27,157 +27,19 @@
 				<table>
 					<tr>
 						<!--each row had 3x td elements which each have one colour-->
-						<td id="color1">
-							<center>
-								<!--inside each of them, there is a percentage which javascript changes to the chance this colour is the imposter and a dropdown menu for you to input evidence against everyone-->
-								<span id="chance1">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(0)" onMouseLeave="closeBox()">
-									<!--in the drop down box it has all the functions you can do which are self explanitory based off the names in the onClick part of it-->
-									<input type="button" value=":" id="options" onClick="options(0)" class="dropbtn"></input>
-									<span id="drpContent1" class="dropdown-content" onMouseOver="options(0)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(0)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(0)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(0)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(0)"></input>
-									</span>
-								</span>
-							</center>
-							<!--this repeats for all 9 td elements across the three rows-->
-						</td>
-						<td id="color2">
-							<center>
-								<span id="chance2">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(1)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(1)" class="dropbtn"></input>
-									<span id="drpContent2" class="dropdown-content" onMouseOver="options(1)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(1)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(1)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(1)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(1)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
-						<td id="color3">
-							<center>
-								<span id="chance3">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(2)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(2)" class="dropbtn"></input>
-									<span id="drpContent3" class="dropdown-content" onMouseOver="options(2)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(2)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(2)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(2)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(2)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
+						<td id="color1"></td>
+						<td id="color2"></td>
+						<td id="color3"></td>
 					</tr>
 					<tr>
-						<td id="color4">
-							<center>
-								<span id="chance4">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(3)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(3)" class="dropbtn"></input>
-									<span id="drpContent4" class="dropdown-content" onMouseOver="options(3)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(3)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(3)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(3)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(3)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
-						<td id="color5">
-							<center>
-								<span id="chance5">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(4)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(4)" class="dropbtn"></input>
-									<span id="drpContent5" class="dropdown-content" onMouseOver="options(4)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(4)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(4)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(4)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(4)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
-						<td id="color6">
-							<center>
-								<span id="chance6">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(5)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(5)" class="dropbtn"></input>
-									<span id="drpContent6" class="dropdown-content" onMouseOver="options(5)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(5)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(5)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(5)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(5)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
+						<td id="color4"></td>
+						<td id="color5"></td>
+						<td id="color6"></td>
 					</tr>
 					<tr>
-						<td id="color7">
-							<center>
-								<span id="chance7">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(6)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(6)" class="dropbtn"></input>
-									<span id="drpContent7" class="dropdown-content" onMouseOver="options(6)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(6)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(6)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(6)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(6)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
-						<td id="color8">
-							<center>
-								<span id="chance8">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(7)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(7)" class="dropbtn"></input>
-									<span id="drpContent8" class="dropdown-content" onMouseOver="options(7)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(7)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(7)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(7)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(7)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
-						<td id="color9">
-							<center>
-								<span id="chance9">
-									%
-								</span>
-								<span class="dropdown" onMouseOver="options(8)" onMouseLeave="closeBox()">
-									<input type="button" value=":" id="options" onClick="options(8)" class="dropbtn"></input>
-									<span id="drpContent9" class="dropdown-content" onMouseOver="options(8)" onMouseLeave="closeBox()">
-										<input type="button" id="drpItem" value="Change Colour" onClick="changeColor(8)"></input>
-										<input type="button" id="drpItem" value="Doing Task" onClick="taskDone(8)"></input>
-										<input type="button" id="drpItem" value="Confirmed Imposter" onClick="imposter(8)"></input>
-										<input type="button" id="drpItem" value="Dead/left" onClick="dead(8)"></input>
-									</span>
-								</span>
-							</center>
-						</td>
+						<td id="color7"></td>
+						<td id="color8"></td>
+						<td id="color9"></td>
 					</tr>
 				</table>
 			</center>
