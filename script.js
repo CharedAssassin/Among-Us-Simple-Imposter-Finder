@@ -1,49 +1,51 @@
 //defining arrays used to control all 9 squares in a neat fashion
-var players = [
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-]
-var chances = [
-  "chance1",
-  "chance2",
-  "chance3",
-  "chance4",
-  "chance5",
-  "chance6",
-  "chance7",
-  "chance8",
-  "chance9",
-]
-var colors = [
-  "color1",
-  "color2",
-  "color3",
-  "color4",
-  "color5",
-  "color6",
-  "color7",
-  "color8",
-  "color9",
-]
-var drpDownId = [
-  "drpContent1",
-  "drpContent2",
-  "drpContent3",
-  "drpContent4",
-  "drpContent5",
-  "drpContent6",
-  "drpContent7",
-  "drpContent8",
-  "drpContent9",
-]
-var idAndFunctions = {
+
+
+var arrays = {
+  players: [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ],
+  colors: [
+    "color1",
+    "color2",
+    "color3",
+    "color4",
+    "color5",
+    "color6",
+    "color7",
+    "color8",
+    "color9",
+  ],
+  drpDownId: [
+    "drpContent1",
+    "drpContent2",
+    "drpContent3",
+    "drpContent4",
+    "drpContent5",
+    "drpContent6",
+    "drpContent7",
+    "drpContent8",
+    "drpContent9",
+  ],
+  chances: [
+    "chance1",
+    "chance2",
+    "chance3",
+    "chance4",
+    "chance5",
+    "chance6",
+    "chance7",
+    "chance8",
+    "chance9",
+  ],
   options: [
     "options(0)",
     "options(1)",
@@ -103,25 +105,25 @@ var idAndFunctions = {
 
 //a function that creates all the elements in the tables
 var createElements = () => {
-  for (i = 0; i < colors.length; i++) {
-    let element = document.getElementById(colors[i]);
+  for (i = 0; i < arrays.colors.length; i++) {
+    let element = document.getElementById(arrays.colors[i]);
     let center = document.createElement("center");
     let percentage = document.createElement("span");
-    percentage.setAttribute("id", chances[i]);
+    percentage.setAttribute("id", arrays.chances[i]);
     percentage.innerHTML = "%";
     let dropDown = document.createElement("span");
     dropDown.setAttribute("class", "dropdown");
-    dropDown.setAttribute("onMouseOver", idAndFunctions.options[i])
+    dropDown.setAttribute("onMouseOver", arrays.options[i])
     dropDown.setAttribute("onMouseLeave", "closeBox()");
     let drpDownContent = document.createElement("span");
-    drpDownContent.setAttribute("id", drpDownId[i]);
+    drpDownContent.setAttribute("id", arrays.drpDownId[i]);
     drpDownContent.setAttribute("class", "dropdown-content");
-    drpDownContent.setAttribute("onMouseOver", idAndFunctions.options[i]);
+    drpDownContent.setAttribute("onMouseOver", arrays.options[i]);
     drpDownContent.setAttribute("onMouseLeave", "closeBox()");
     let button = document.createElement("input");
     button.setAttribute("type", "button");
     button.setAttribute("value", ":");
-    button.setAttribute("onClick", idAndFunctions.options[i])
+    button.setAttribute("onClick", arrays.options[i])
     button.setAttribute("id", "options");
     button.setAttribute("class", "dropbtn")
     //the C at the end of the name is just to seperate it from other functions
@@ -129,22 +131,22 @@ var createElements = () => {
     changeColorC.setAttribute("type", "button");
     changeColorC.setAttribute("id", "drpItem");
     changeColorC.setAttribute("value", "Change Colour");
-    changeColorC.setAttribute("onClick", idAndFunctions.color[i]);
+    changeColorC.setAttribute("onClick", arrays.color[i]);
     let doingTaskC = document.createElement("input");
     doingTaskC.setAttribute("type", "button");
     doingTaskC.setAttribute("id", "drpItem");
     doingTaskC.setAttribute("value", "Doing Task");
-    doingTaskC.setAttribute("onClick", idAndFunctions.task[i]);
+    doingTaskC.setAttribute("onClick", arrays.task[i]);
     let confirmedImpC = document.createElement("input");
     confirmedImpC.setAttribute("type", "button");
     confirmedImpC.setAttribute("id", "drpItem");
     confirmedImpC.setAttribute("value", "Confirmed Imposter");
-    confirmedImpC.setAttribute("onClick", idAndFunctions.imp[i]);
+    confirmedImpC.setAttribute("onClick", arrays.imp[i]);
     let deadOrLeftC = document.createElement("input");
     deadOrLeftC.setAttribute("type", "button");
     deadOrLeftC.setAttribute("id", "drpItem");
     deadOrLeftC.setAttribute("value", "Dead/left");
-    deadOrLeftC.setAttribute("onClick", idAndFunctions.dead[i]);
+    deadOrLeftC.setAttribute("onClick", arrays.dead[i]);
 
     //adding all the elements together so then we have the functioning page
     element.appendChild(center);
@@ -161,7 +163,7 @@ var createElements = () => {
 }
 
 //defining basic variables that are used to find the percentage each player has of being the imposter
-//total is the amount of players still alive
+//total is the amount of arrays.players still alive
 var total = 9
 //fake1 is just a holder for fake so then when the reset() function is called we know how many imposters there originally was
 var fake1 = window.prompt("How many imposters are there?");
@@ -175,7 +177,7 @@ var titleOptions = () => {
 }
 
 var options = (i) => {
-  document.getElementById(drpDownId[i]).classList.toggle("show");
+  document.getElementById(arrays.drpDownId[i]).classList.toggle("show");
 }
 var closeBox = () => {
   var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -210,7 +212,7 @@ var changeColor = (y) => {
   //sets the colour to upper case so it is definitely what the code has been told to look for
   let x = i.toUpperCase();
   //getting the id of the element
-  let element = document.getElementById(colors[y]);
+  let element = document.getElementById(arrays.colors[y]);
   //the if code to find out what colour was actually inputted
   switch (x) {
     case "RED":
@@ -257,33 +259,33 @@ var changeColor = (y) => {
   update();
 }
 
-//dealing with ruling out players, through tasks
+//dealing with ruling out arrays.players, through tasks
 var taskDone = (i) => {
   //a lot of these use an array which takes i, which is an argument saying where in the array, to work out what player
   //if it didn't have that array, the code would have 9 functions that look almost identical to this
-  players[i] = false;
+  arrays.players[i] = false;
   updateTotal();
   update();
 }
 
-//dealing with ruling out players, if they were imposter
+//dealing with ruling out arrays.players, if they were imposter
 var imposter = (i) => {
-  players[i] = "imposter";
+  arrays.players[i] = "imposter";
   updateTotal();
   update();
 }
 
 //if someone is dead/left the game
 var dead = (i) => {
-  players[i] = false;
+  arrays.players[i] = false;
   updateTotal();
   update();
 }
 
 //resetting the percentages so you don't have to reload the page and redo all the colours
 var reset = () => {
-  for (i=0; i<players.length;i++) {
-    players[i] = true;
+  for (i=0; i<arrays.players.length;i++) {
+    arrays.players[i] = true;
   }
   total = 9;
   fake = fake1;
@@ -314,20 +316,20 @@ var changeFake = () => {
 //imposter, for confirmed imposter
 //imposterK is so that someone declared imposter will not be marked as imposter twice. Without this, it will decrease everyone elses imposter chance because it thinks you caught both not just one
 var update = () => {
-  for (i = 0; i < players.length; i++) {
-    if (players[i] === true) {
-      document.getElementById(chances[i]).innerHTML = percentage() + "%";
-    } else if (players[i] === false) {
-      document.getElementById(chances[i]).innerHTML = "0%";
-    } else if (players[i] === "imposter") {
+  for (i = 0; i < arrays.players.length; i++) {
+    if (arrays.players[i] === true) {
+      document.getElementById(arrays.chances[i]).innerHTML = percentage() + "%";
+    } else if (arrays.players[i] === false) {
+      document.getElementById(arrays.chances[i]).innerHTML = "0%";
+    } else if (arrays.players[i] === "imposter") {
       fake = fake - 1;
-      players[i] = "imposterK";
+      arrays.players[i] = "imposterK";
       update();
-    } else if (players[i] === "imposterK") {
-      players[i] = "imposterK";
-      document.getElementById(chances[i]).innerHTML = "100%";
+    } else if (arrays.players[i] === "imposterK") {
+      arrays.players[i] = "imposterK";
+      document.getElementById(arrays.chances[i]).innerHTML = "100%";
     } else {
-      document.getElementById(chances[i]).innerHTML = "0%";
+      document.getElementById(arrays.chances[i]).innerHTML = "0%";
     }
   }
 }
