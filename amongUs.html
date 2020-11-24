@@ -1,48 +1,49 @@
 <!DOCTYPEhtml>
-	<html>
-		<head>
-			<!--linking in the CSS and JS code-->
-		 <link rel="stylesheet" href="style.css" type="text/css">
-		 <script src="script.js" type="text/javascript"></script>
-			<title>
-				Among Us Imposter Finder
-			</title>
-		</head>
-		<!--onload function is there so the percentages automatically load, it can be manually loaded by clicking the title-->
-		<body onLoad="createElements()">
-			<center>
-				<span>
-					<h1>
-						Among Us Imposter Finder
-					</h1>
-					<span class="dropdown" onMouseOver="titleOptions()" onMouseLeave="closeBox()">
-						<input type="button" value=":" id="options" onClick="titleOptions()" class="dropbtn"></input>
-						<span id="drpDownTitle" class="dropdown-content" onMouseOver="titleOptions()" onMouseLeave="closeBox()">
-							<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
-							<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
-						</span>
+<html>
+	<head>
+		<!--linking in the CSS and JS code-->
+		<link rel="stylesheet" href="style.css" type="text/css">
+	 <script src="script.js" type="text/javascript"></script>
+		<title>
+			Among Us Imposter Finder
+		</title>
+	</head>
+	<!--onload function is there so the percentages automatically load, it can be manually loaded by clicking the title-->
+	<body onLoad="createElements()">
+		<center>
+			<span>
+				<h1>
+					Among Us Imposter Finder
+				</h1>
+				<span class="dropdown" onMouseOver="titleOptions()" onMouseLeave="closeBox()">
+					<input type="button" value=":" id="options" onClick="titleOptions()" class="dropbtn"></input>
+					<span id="drpDownTitle" class="dropdown-content" onMouseOver="titleOptions()" onMouseLeave="closeBox()">
+						<input type="button" id="drpItem" value="New game" onClick="reset()"></input>
+						<input type="button" id="drpItem" value="Change Imposter Count" onClick="changeFake()"></input>
+						<input type="button" id="drpItem" value="Change Player Count" onClick="changePlayerCount()"></input>
 					</span>
-			</span>
-				<!--I used a table to orientate the colours into a 3x3 grid-->
-				<table>
-					<tr>
-						<!--each row had 3x td elements which each have one colour-->
-						<!--all of these are just the table data element because the rest of it is created in the javascript file to make it easier to edit all 9 in one go-->
-						<td id="color1"></td>
-						<td id="color2"></td>
-						<td id="color3"></td>
-					</tr>
-					<tr>
-						<td id="color4"></td>
-						<td id="color5"></td>
-						<td id="color6"></td>
-					</tr>
-					<tr>
-						<td id="color7"></td>
-						<td id="color8"></td>
-						<td id="color9"></td>
-					</tr>
-				</table>
-			</center>
-		</body>
-	</html>
+				</span>
+		</span>
+			<!--I used a table to orientate the colours into a 3x3 grid-->
+			<table>
+				<tr>
+					<!--each row had 3x td elements which each have one colour-->
+					<!--all of these are just the table data element because the rest of it is created in the javascript file to make it easier to edit all 9 in one go-->
+					<td id="color1"></td>
+					<td id="color2"></td>
+					<td id="color3"></td>
+				</tr>
+				<tr>
+					<td id="color4"></td>
+					<td id="color5"></td>
+					<td id="color6"></td>
+				</tr>
+				<tr>
+					<td id="color7"></td>
+					<td id="color8"></td>
+					<td id="color9"></td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>
