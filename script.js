@@ -103,6 +103,8 @@ var arrays = {
   ],
 }
 
+var created = 0;
+
 //a function that creates all the elements in the tables
 var createElements = () => {
   for (i = 0; i < arrays.colors.length; i++) {
@@ -160,7 +162,62 @@ var createElements = () => {
     drpDownContent.appendChild(deadOrLeftC);
   }
   update();
+  created = 1;
 }
+
+//a function to change how many people are in the game
+var changePlayerCount = () => {
+  let x = window.prompt("How many players are in this game?");
+  switch (x) {
+    case "4":
+      arrays.players[8] = "out";
+      arrays.players[7] = "out";
+      arrays.players[6] = "out";
+      arrays.players[5] = "out";
+      arrays.players[4] = "out";
+      arrays.players[3] = "out";
+      update();
+      return 0;
+    case "5":
+      arrays.players[8] = "out";
+      arrays.players[7] = "out";
+      arrays.players[6] = "out";
+      arrays.players[5] = "out";
+      arrays.players[4] = "out";
+      update();
+      return 0;
+    case "6":
+      arrays.players[8] = "out";
+      arrays.players[7] = "out";
+      arrays.players[6] = "out";
+      arrays.players[5] = "out";
+      update();
+      return 0;
+    case "7":
+      arrays.players[8] = "out";
+      arrays.players[7] = "out";
+      arrays.players[6] = "out";
+      update();
+      return 0;
+    case "8":
+      arrays.players[8] = "out";
+      arrays.players[7] = "out";
+      update();
+      return 0;
+    case "9":
+      arrays.players[8] = "out";
+      update();
+      return 0;
+    case "10":
+      reset();
+      return 0;
+    default:
+      window.alert("That is not a valid number, valid numbers are 4-10")
+      return 0;
+  }
+  createElements();
+}
+
 
 //defining basic variables that are used to find the percentage each player has of being the imposter
 //total is the amount of arrays.players still alive
@@ -328,6 +385,13 @@ var update = () => {
     } else if (arrays.players[i] === "imposterK") {
       arrays.players[i] = "imposterK";
       document.getElementById(arrays.chances[i]).innerHTML = "100%";
+    } else if (arrays.players[i] === "out"){
+      document.getElementById(arrays.chances[i]).innerHTML = "Not playing";
+      updateTotal();
+      arrays.players[i] = "outK";
+      update();
+    } else if (arrays.players[i] === "outK") {
+      document.getElementById(arrays.chances[i]).innerHTML = "Not playing";
     } else {
       document.getElementById(arrays.chances[i]).innerHTML = "0%";
     }
