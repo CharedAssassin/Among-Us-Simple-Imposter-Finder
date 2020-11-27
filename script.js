@@ -103,8 +103,6 @@ var arrays = {
   ],
 }
 
-var created = 0;
-
 //a function that creates all the elements in the tables
 var createElements = () => {
   for (i = 0; i < arrays.colors.length; i++) {
@@ -162,7 +160,6 @@ var createElements = () => {
     drpDownContent.appendChild(deadOrLeftC);
   }
   update();
-  created = 1;
 }
 
 //a function to change how many people are in the game
